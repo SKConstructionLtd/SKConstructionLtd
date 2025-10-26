@@ -138,10 +138,10 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
               <p className="text-gray-600 mb-4">We'll respond within 24 hours</p>
               <a
-                href="mailto:info@skconstructionltd.co.uk"
+                href="mailto:skdevelopmentandconstruction@gmail.com"
                 className="text-emerald-600 font-semibold hover:text-emerald-700 break-all"
               >
-                info@skconstructionltd.co.uk
+                skdevelopmentandconstruction@gmail.com
               </a>
             </div>
 

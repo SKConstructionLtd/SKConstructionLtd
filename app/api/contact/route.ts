@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
         <div style="background: #1e293b; padding: 20px; text-align: center; color: white;">
           <p style="margin: 0 0 10px 0;"><strong>SK Construction Ltd</strong></p>
           <p style="margin: 0; font-size: 14px;">
-            Phone: +12 3456789 | Email: info@skconstructionltd.co.uk
+            Phone: +12 3456789 | Email: skdevelopmentandconstruction@gmail.com
           </p>
         </div>
       </div>
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: 'info@skconstructionltd.co.uk',
+      to: 'skdevelopmentandconstruction@gmail.com',
       subject: `New Contact Request from ${name}`,
       html: adminEmailContent,
     });
