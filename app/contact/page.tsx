@@ -101,7 +101,7 @@ export default function ContactPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+            src="/images/images/image-3.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -175,7 +175,7 @@ export default function ContactPage() {
               </div>
               <div className="mt-8 relative h-64 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                  src="/images/images/image-2.jpg"
                   alt="SK Construction team"
                   fill
                   className="object-cover"

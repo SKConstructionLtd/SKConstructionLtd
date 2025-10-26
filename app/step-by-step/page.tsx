@@ -64,7 +64,7 @@ export default function StepByStepPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+            src="/images/images/image-8.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -93,7 +93,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+                  src="/images/images/image-9.jpg"
                   alt="Site preparation"
                   fill
                   className="object-cover"
@@ -159,7 +159,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                  src="/images/images/image-7.jpg"
                   alt="Foundations"
                   fill
                   className="object-cover"
@@ -173,7 +173,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+                  src="/images/images/image-5.jpg"
                   alt="Superstructure"
                   fill
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg"
+                  src="/images/images/image-7.jpg"
                   alt="MEP works"
                   fill
                   className="object-cover"
@@ -253,7 +253,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                  src="/images/images/image-8.jpg"
                   alt="Internal finishes"
                   fill
                   className="object-cover"
@@ -306,7 +306,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg"
+                  src="/images/images/image-1.jpg"
                   alt="Planning and design"
                   fill
                   className="object-cover"
@@ -372,7 +372,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+                  src="/images/images/image-1.jpg"
                   alt="Excavation"
                   fill
                   className="object-cover"
@@ -386,7 +386,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg"
+                  src="/images/images/image-2.jpg"
                   alt="Surface installation"
                   fill
                   className="object-cover"
@@ -452,7 +452,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                  src="/images/images/image-9.jpg"
                   alt="Finishing"
                   fill
                   className="object-cover"

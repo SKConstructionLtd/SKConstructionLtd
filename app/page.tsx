@@ -11,17 +11,17 @@ import LazySection from '@/components/LazySection';
 gsap.registerPlugin(ScrollTrigger);
 
 const heroImages = [
-  'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
-  'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
-  'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
-  'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg',
+  '/images/images/image-2.jpg',
+  '/images/images/image-3.jpg',
+  '/images/images/image-2.jpg',
+  '/images/images/image-6.jpg',
 ];
 
 const processImages = [
-  'https://images.pexels.com/photos/7641828/pexels-photo-7641828.jpeg',
-  'https://images.pexels.com/photos/5691607/pexels-photo-5691607.jpeg',
-  'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
-  'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
+  '/images/images/image-8.jpg',
+  '/images/images/image-9.jpg',
+  '/images/images/image-4.jpg',
+  '/images/images/image-4.jpg',
 ];
 
 export default function Home() {
@@ -275,7 +275,7 @@ export default function Home() {
               <div className="service-card relative group">
                 <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
                   <Image
-                    src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+                    src="/images/images/image-5.jpg"
                     alt="Driveways & Patios"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -298,7 +298,7 @@ export default function Home() {
               <div className="service-card relative group">
                 <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
                   <Image
-                    src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                    src="/images/images/image-5.jpg"
                     alt="Carpentry & Bespoke Joinery"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -321,7 +321,7 @@ export default function Home() {
               <div className="service-card relative group">
                 <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
                   <Image
-                    src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+                    src="/images/images/image-3.jpg"
                     alt="Basement Conversions"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

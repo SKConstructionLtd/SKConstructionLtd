@@ -11,47 +11,47 @@ gsap.registerPlugin(ScrollTrigger);
 
 const galleryImages = [
   {
-    src: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
+    src: '/images/images/image-1.jpg',
     alt: 'Construction site foundation work',
     category: 'House Building',
   },
   {
-    src: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
+    src: '/images/images/image-2.jpg',
     alt: 'Modern construction project',
     category: 'House Building',
   },
   {
-    src: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
+    src: '/images/images/image-3.jpg',
     alt: 'Completed residential property',
     category: 'Completed Projects',
   },
   {
-    src: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg',
+    src: '/images/images/image-4.jpg',
     alt: 'Construction workers on site',
     category: 'House Building',
   },
   {
-    src: 'https://images.pexels.com/photos/159358/construction-site-build-construction-work-159358.jpeg',
+    src: '/images/images/image-5.jpg',
     alt: 'Building under construction',
     category: 'House Building',
   },
   {
-    src: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg',
+    src: '/images/images/image-6.jpg',
     alt: 'Modern driveway installation',
     category: 'Driveways & Patios',
   },
   {
-    src: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
+    src: '/images/images/image-7.jpg',
     alt: 'Exterior finishing work',
     category: 'External Finishes',
   },
   {
-    src: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg',
+    src: '/images/images/image-8.jpg',
     alt: 'Patio construction',
     category: 'Driveways & Patios',
   },
   {
-    src: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
+    src: '/images/images/image-9.jpg',
     alt: 'Roofing work in progress',
     category: 'Roofing',
   },
@@ -101,7 +101,7 @@ export default function GalleryPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+            src="/images/images/image-1.jpg"
             alt="Background"
             fill
             className="object-cover"
