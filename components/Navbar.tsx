@@ -48,7 +48,7 @@ const Navbar = () => {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-12 h-12 sm:w-14 sm:h-14">
               <Image
-                src="/images/logo/logo.jpg"
+                src="/images/logo/logo.png"
                 alt="SK Construction Ltd Logo"
                 fill
                 className="object-contain"

@@ -127,7 +127,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
               <p className="text-gray-600 mb-4">Mon-Fri from 8am to 6pm</p>
               <a href="tel:+123456789" className="text-emerald-600 font-semibold text-lg hover:text-emerald-700">
-                +12 3456789
+                +44 7800 909182
               </a>
             </div>
 
@@ -172,14 +172,6 @@ export default function ContactPage() {
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
-              </div>
-              <div className="mt-8 relative h-64 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/images/images/image-2.jpg"
-                  alt="SK Construction team"
-                  fill
-                  className="object-cover"
-                />
               </div>
             </div>
 

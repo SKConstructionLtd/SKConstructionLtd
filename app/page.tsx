@@ -11,17 +11,17 @@ import LazySection from '@/components/LazySection';
 gsap.registerPlugin(ScrollTrigger);
 
 const heroImages = [
-  '/images/images/image-2.jpg',
-  '/images/images/image-3.jpg',
-  '/images/images/image-2.jpg',
-  '/images/images/image-6.jpg',
+  '/images/hero/hero-1.jpg',
+  '/images/hero/hero-2.jpg',
+  '/images/hero/hero-3.jpg',
+  '/images/hero/hero-4.jpg',
 ];
 
 const processImages = [
-  '/images/images/image-8.jpg',
-  '/images/images/image-9.jpg',
-  '/images/images/image-4.jpg',
-  '/images/images/image-4.jpg',
+  '/images/home/home-1.jpg',
+  '/images/home/home-2.jpg',
+  '/images/home/home-3.jpg',
+  '/images/home/home-4.jpg',
 ];
 
 export default function Home() {
@@ -181,6 +181,15 @@ export default function Home() {
     }
   ];
 
+  const services = [
+    { title: 'Driveways &\nPatios', number: '01', image: '/images/images/image-5.jpg' },
+    { title: 'Carpentry &\nBespoke Joinery', number: '02', image: '/images/images/image-5.jpg' },
+    { title: 'New\nBuilds', number: '03', image: '/images/images/image-3.jpg' },
+    { title: 'Loft\nConversions', number: '04', image: '/images/images/image-3.jpg' },
+    { title: 'Plastering', number: '05', image: '/images/images/image-5.jpg' },
+    { title: 'Electrical', number: '06', image: '/images/images/image-3.jpg' }
+  ];
+
   return (
     <div className="pt-20 bg-gray-50">
       <section ref={heroRef} className="relative py-12 md:py-20 bg-gray-50">
@@ -211,7 +220,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-emerald-700 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
                 </Link>
-                <Link href="/services">
+                <Link href="/about">
                   <button className="group relative border-2 border-slate-900 text-slate-900 px-8 py-4 text-lg font-bold overflow-hidden hover:text-white" style={{ fontFamily: 'RF Dewi Extended, sans-serif', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 8% 100%)' }}>
                     <span className="relative z-10 flex items-center">
                       Read More
@@ -272,74 +281,37 @@ export default function Home() {
             </div>
 
             <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="service-card relative group">
-                <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/images/image-5.jpg"
-                    alt="Driveways & Patios"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    quality={85}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-white/80 text-xs font-bold mb-2" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>01</p>
-                    <h3 className="text-white text-2xl font-black mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                      Driveways &<br />Patios
-                    </h3>
-                    <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-colors">
-                      <ArrowRight className="text-white" size={20} />
-                    </button>
+              {services.map((service, idx) => (
+                <div key={idx} className="service-card relative group">
+                  <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg bg-gradient-to-br from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <p className="text-white/80 text-xs font-bold mb-2" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>{service.number}</p>
+                      <h3 className="text-white text-2xl font-black whitespace-pre-line" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                        {service.title}
+                      </h3>
+                    </div>
+                    <div className="absolute top-8 right-8 text-white/10 text-9xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                      {service.number}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="service-card relative group">
-                <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/images/image-5.jpg"
-                    alt="Carpentry & Bespoke Joinery"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    quality={85}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-white/80 text-xs font-bold mb-2" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>02</p>
-                    <h3 className="text-white text-2xl font-black mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                      Carpentry &<br />Bespoke Joinery
-                    </h3>
-                    <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-colors">
-                      <ArrowRight className="text-white" size={20} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="service-card relative group">
-                <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/images/image-3.jpg"
-                    alt="Basement Conversions"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    quality={85}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-white/80 text-xs font-bold mb-2" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>03</p>
-                    <h3 className="text-white text-2xl font-black mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                      Basement<br />Conversions
-                    </h3>
-                    <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-colors">
-                      <ArrowRight className="text-white" size={20} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center mt-12">
+              <p className="text-slate-700 text-lg mb-6" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                To see all projects we undertake checkout our gallery
+              </p>
+              <Link href="/gallery">
+                <button className="group relative bg-emerald-600 text-white px-8 py-4 text-lg font-bold overflow-hidden" style={{ fontFamily: 'RF Dewi Extended, sans-serif', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 8% 100%)' }}>
+                  <span className="relative z-10 flex items-center justify-center">
+                    View Gallery
+                    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" size={20} />
+                  </span>
+                  <div className="absolute inset-0 bg-emerald-700 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -403,21 +375,47 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((_, idx) => (
-                <div key={idx} className="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="text-emerald-500 fill-emerald-500" size={20} />
-                    ))}
-                  </div>
-                  <p className="text-slate-700 mb-6 leading-relaxed">
-                    I have a large driveway that was completely wrecked by flooding and the WH Groundworks team quoted reasonable, and have done a fantastic job. As well as doing a great job, we were most pleased with their communication.
-                  </p>
-                  <p className="text-emerald-600 font-black text-lg" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                    Cyril Lucas
-                  </p>
+              <div className="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-emerald-500 fill-emerald-500" size={20} />
+                  ))}
                 </div>
-              ))}
+                <p className="text-slate-700 mb-6 leading-relaxed">
+                  I have a large driveway that was completely wrecked by flooding and the WH Groundworks team quoted reasonable, and have done a fantastic job. As well as doing a great job, we were most pleased with their communication.
+                </p>
+                <p className="text-emerald-600 font-black text-lg" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                  Cyril Lucas
+                </p>
+              </div>
+
+              <div className="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-emerald-500 fill-emerald-500" size={20} />
+                  ))}
+                </div>
+                <p className="text-slate-700 mb-6 leading-relaxed">
+                  We hired them for a complete loft conversion and couldn't be happier with the results. The craftsmanship is outstanding and they completed everything on time and within budget. Highly professional team from start to finish.
+                </p>
+                <p className="text-emerald-600 font-black text-lg" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                  Sarah Mitchell
+                </p>
+              </div>
+
+              <div className="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-emerald-500 fill-emerald-500" size={20} />
+                  ))}
+                </div>
+                <p className="text-slate-700 mb-6 leading-relaxed">
+                  Exceptional service throughout our new build project. The attention to detail and quality of workmanship exceeded our expectations. They handled everything professionally and kept us informed every step of the way.
+                </p>
+                <p className="text-emerald-600 font-black text-lg" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
+                  James Patterson
+                </p>
+              </div>
             </div>
           </div>
         </section>

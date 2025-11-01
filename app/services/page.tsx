@@ -47,7 +47,7 @@ export default function ServicesPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="/images/images/image-6.jpg"
+            src="/images/services/services-1.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -111,7 +111,7 @@ export default function ServicesPage() {
               </div>
               <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-7.jpg"
+                  src="/images/services/services-1.jpg"
                   alt="House construction site"
                   fill
                   className="object-cover"
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl order-2 lg:order-1">
                 <Image
-                  src="/images/images/image-6.jpg"
+                  src="/images/services/services-2.jpg"
                   alt="Masonry work"
                   fill
                   className="object-cover"
@@ -290,7 +290,7 @@ export default function ServicesPage() {
               </div>
               <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-4.jpg"
+                  src="/images/services/services-3.jpg"
                   alt="Completed construction project"
                   fill
                   className="object-cover"

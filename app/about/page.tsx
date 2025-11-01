@@ -62,7 +62,7 @@ export default function AboutPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="/images/images/image-1.jpg"
+            src="/images/our-story/our-story-1.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -108,7 +108,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-96 lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="/images/images/image-1.jpg"
+                src="/images/our-story/our-story-1.jpg"
                 alt="Construction team at work"
                 fill
                 className="object-cover"
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="text-white" size={32} />
               </div>
-              <div className="text-4xl font-bold text-slate-900 mb-2">500+</div>
+              <div className="text-4xl font-bold text-slate-900 mb-2">300+</div>
               <div className="text-gray-600">Projects Completed</div>
             </div>
             <div className="stat-card bg-white p-8 rounded-lg shadow-lg text-center">
@@ -207,7 +207,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-96 lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-2xl order-2 lg:order-1">
               <Image
-                src="/images/images/image-2.jpg"
+                src="/images/floor-refurbishment-belgravia/floor-refurbishment-belgravia-6.jpg"
                 alt="Modern construction site"
                 fill
                 className="object-cover"

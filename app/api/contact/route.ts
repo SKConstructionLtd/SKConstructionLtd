@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
             <p style="margin: 5px 0;"><strong>Preferred Contact Method:</strong> ${preferredContact}</p>
           </div>
           <p style="font-size: 16px; line-height: 1.6; color: #333;">
-            In the meantime, feel free to call us at <strong>+12 3456789</strong> if you have any urgent questions.
+            In the meantime, feel free to call us at <strong>+44 7800 909182</strong> if you have any urgent questions.
           </p>
           <p style="font-size: 16px; line-height: 1.6; color: #333;">
             Best regards,<br>
@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
         <div style="background: #1e293b; padding: 20px; text-align: center; color: white;">
           <p style="margin: 0 0 10px 0;"><strong>SK Construction Ltd</strong></p>
           <p style="margin: 0; font-size: 14px;">
-            Phone: +12 3456789 | Email: skdevelopmentandconstruction@gmail.com
+            Phone: +44 7800 909182 | Email: skdevelopmentandconstruction@gmail.com
           </p>
         </div>
       </div>

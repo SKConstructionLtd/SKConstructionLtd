@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact Us - SK Construction Ltd | Get a Free Quote',
-  description: 'Contact SK Construction Ltd for a free consultation and quote. Call us at +12 3456789 or email skdevelopmentandconstruction@gmail.com. Professional construction services across the UK.',
+  description: 'Contact SK Construction Ltd for a free consultation and quote. Call us at +44 7800 909182 or email skdevelopmentandconstruction@gmail.com. Professional construction services across the UK.',
   keywords: 'contact construction company, free quote, construction consultation, SK Construction contact, building quote UK',
   openGraph: {
     title: 'Contact Us - SK Construction Ltd',

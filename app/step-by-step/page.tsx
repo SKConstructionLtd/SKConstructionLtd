@@ -93,7 +93,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-9.jpg"
+                  src="/images/setting-out/setting-out-1.jpg"
                   alt="Site preparation"
                   fill
                   className="object-cover"
@@ -159,7 +159,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="/images/images/image-7.jpg"
+                  src="/images/step-by-step/step-by-step-2.jpg"
                   alt="Foundations"
                   fill
                   className="object-cover"
@@ -173,7 +173,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-5.jpg"
+                  src="/images/roofing/roofing-9.jpg"
                   alt="Superstructure"
                   fill
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="/images/images/image-7.jpg"
+                  src="/images/step-by-step/step-by-step-4.jpg"
                   alt="MEP works"
                   fill
                   className="object-cover"
@@ -253,7 +253,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-8.jpg"
+                  src="/images/step-by-step/step-by-step-5.jpg"
                   alt="Internal finishes"
                   fill
                   className="object-cover"
@@ -306,7 +306,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-1.jpg"
+                  src="/images/step-by-step/step-by-step-6.jpg"
                   alt="Planning and design"
                   fill
                   className="object-cover"
@@ -372,7 +372,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="/images/images/image-1.jpg"
+                  src="/images/step-by-step/step-by-step-7.jpg"
                   alt="Excavation"
                   fill
                   className="object-cover"
@@ -386,7 +386,7 @@ export default function StepByStepPage() {
             <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/images/image-2.jpg"
+                  src="/images/step-by-step/step-by-step-8.jpg"
                   alt="Surface installation"
                   fill
                   className="object-cover"
@@ -452,7 +452,7 @@ export default function StepByStepPage() {
               </div>
               <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
                 <Image
-                  src="/images/images/image-9.jpg"
+                  src="/images/step-by-step/step-by-step-9.jpg"
                   alt="Finishing"
                   fill
                   className="object-cover"
