@@ -63,7 +63,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-            <span className="text-white">Our London Building</span>
+            <span className="text-white">Our Building</span>
             <br />
             <span className="text-emerald-500">Process Made Simple</span>
           </h2>
