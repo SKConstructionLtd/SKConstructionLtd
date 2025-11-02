@@ -68,7 +68,7 @@ export default function HeroSection() {
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 leading-none"
               style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}
             >
-              London
+              SK
               <span className="block text-emerald-600">Builders</span>
               <span className="block">From Ground</span>
               <span className="block">to Finish</span>
@@ -83,7 +83,7 @@ export default function HeroSection() {
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <button className="group relative bg-emerald-600 text-white px-8 py-4 text-lg font-bold overflow-hidden" style={{ fontFamily: 'RF Dewi Extended, sans-serif', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 8% 100%)' }}>
-                  <span className="relative z-10">Get a Free London Quote</span>
+                  <span className="relative z-10">Get a Free Quote</span>
                   <div className="absolute inset-0 bg-emerald-700 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                 </button>
               </Link>
