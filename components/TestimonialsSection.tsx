@@ -45,7 +45,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-            What London Clients
+            What Clients
             <br />
             <span className="text-emerald-600">Say About Us</span>
           </h2>
