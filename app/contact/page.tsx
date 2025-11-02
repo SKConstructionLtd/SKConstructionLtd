@@ -101,7 +101,7 @@ export default function ContactPage() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="/images/images/image-3.jpg"
+            src="/images/home/home-2.jpg"
             alt="Background"
             fill
             className="object-cover"
