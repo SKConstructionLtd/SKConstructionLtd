@@ -1,64 +1,10 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-
-gsap.registerPlugin(ScrollTrigger);
+import AnimatedHeader from '@/components/AnimatedHeader';
+import AnimatedStepCard from '@/components/AnimatedStepCard';
 
 export default function StepByStepPage() {
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        headerRef.current,
-        { opacity: 0, y: 50, scale: 0.9 },
-        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power3.out' }
-      );
-
-      gsap.fromTo(
-        '.step-card',
-        { opacity: 0, x: -100, rotationY: -20 },
-        {
-          opacity: 1,
-          x: 0,
-          rotationY: 0,
-          duration: 1,
-          stagger: 0.3,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.steps-container',
-            start: 'top 70%',
-          },
-        }
-      );
-
-      gsap.fromTo(
-        '.process-image-card',
-        { opacity: 0, scale: 0.8, rotation: 5 },
-        {
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: '.steps-container',
-            start: 'top 70%',
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <div className="pt-20">
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
@@ -70,14 +16,7 @@ export default function StepByStepPage() {
             className="object-cover"
           />
         </div>
-        <div ref={headerRef} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-            Step by <span className="text-emerald-400">Step Process</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A detailed breakdown of how we bring your construction projects to life
-          </p>
-        </div>
+        <AnimatedHeader />
       </section>
 
       <section className="steps-container py-20 bg-gray-50">
@@ -90,205 +29,80 @@ export default function StepByStepPage() {
           </div>
 
           <div className="space-y-16">
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/setting-out/setting-out-1.jpg"
-                  alt="Site preparation"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 left-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>1</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Site Preparation & Groundwork
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  The foundation of every successful build starts with thorough site preparation. Our team assesses the land, clears vegetation, and prepares the ground for construction.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Site survey and assessment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Vegetation clearing and debris removal</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Ground leveling and excavation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Soil testing and stabilization</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/setting-out/setting-out-1.jpg"
+              imageAlt="Site preparation"
+              stepNumber={1}
+              imagePosition="left"
+              title="Site Preparation & Groundwork"
+              description="The foundation of every successful build starts with thorough site preparation. Our team assesses the land, clears vegetation, and prepares the ground for construction."
+              features={[
+                'Site survey and assessment',
+                'Vegetation clearing and debris removal',
+                'Ground leveling and excavation',
+                'Soil testing and stabilization'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Foundations & Substructure
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  Strong foundations are critical for the longevity and safety of any building. We use industry-leading techniques to ensure structural integrity.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Trench excavation for footings</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Concrete pouring and reinforcement</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Damp-proof coursing installation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Substructure wall construction</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
-                <Image
-                  src="/images/step-by-step/step-by-step-2.jpg"
-                  alt="Foundations"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 right-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>2</span>
-                </div>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-2.jpg"
+              imageAlt="Foundations"
+              stepNumber={2}
+              imagePosition="right"
+              title="Foundations & Substructure"
+              description="Strong foundations are critical for the longevity and safety of any building. We use industry-leading techniques to ensure structural integrity."
+              features={[
+                'Trench excavation for footings',
+                'Concrete pouring and reinforcement',
+                'Damp-proof coursing installation',
+                'Substructure wall construction'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/roofing/roofing-9.jpg"
-                  alt="Superstructure"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 left-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>3</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Superstructure & Roofing
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  The superstructure brings your vision to life. We build the main structure and install a weatherproof roofing system.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Load-bearing wall construction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Floor joist and beam installation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Roof truss erection</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Tiles, felt, and insulation</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/roofing/roofing-9.jpg"
+              imageAlt="Superstructure"
+              stepNumber={3}
+              imagePosition="left"
+              title="Superstructure & Roofing"
+              description="The superstructure brings your vision to life. We build the main structure and install a weatherproof roofing system."
+              features={[
+                'Load-bearing wall construction',
+                'Floor joist and beam installation',
+                'Roof truss erection',
+                'Tiles, felt, and insulation'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  MEP Works & Services
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  Our certified professionals install all mechanical, electrical, and plumbing systems to the highest standards.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Electrical wiring and fittings</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Plumbing and drainage systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Heating and ventilation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Gas supply and safety checks</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
-                <Image
-                  src="/images/step-by-step/step-by-step-4.jpg"
-                  alt="MEP works"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 right-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>4</span>
-                </div>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-4.jpg"
+              imageAlt="MEP works"
+              stepNumber={4}
+              imagePosition="right"
+              title="MEP Works & Services"
+              description="Our certified professionals install all mechanical, electrical, and plumbing systems to the highest standards."
+              features={[
+                'Electrical wiring and fittings',
+                'Plumbing and drainage systems',
+                'Heating and ventilation',
+                'Gas supply and safety checks'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/step-by-step/step-by-step-5.jpg"
-                  alt="Internal finishes"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 left-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>5</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Internal & External Finishes
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  The finishing touches transform a structure into a beautiful, functional home. Attention to detail is paramount.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Plastering and drywalling</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Flooring installation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Painting and decorating</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">External rendering and cladding</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-5.jpg"
+              imageAlt="Internal finishes"
+              stepNumber={5}
+              imagePosition="left"
+              title="Internal & External Finishes"
+              description="The finishing touches transform a structure into a beautiful, functional home. Attention to detail is paramount."
+              features={[
+                'Plastering and drywalling',
+                'Flooring installation',
+                'Painting and decorating',
+                'External rendering and cladding'
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -303,165 +117,65 @@ export default function StepByStepPage() {
           </div>
 
           <div className="space-y-16">
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/step-by-step/step-by-step-6.jpg"
-                  alt="Planning and design"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 left-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>1</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Planning & Design
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  We work closely with you to design a driveway or patio that complements your property and meets your functional needs.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Site measurement and analysis</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Material selection consultation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Drainage planning</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">3D visualization (where applicable)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-6.jpg"
+              imageAlt="Planning and design"
+              stepNumber={1}
+              imagePosition="left"
+              title="Planning & Design"
+              description="We work closely with you to design a driveway or patio that complements your property and meets your functional needs."
+              features={[
+                'Site measurement and analysis',
+                'Material selection consultation',
+                'Drainage planning',
+                '3D visualization (where applicable)'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Excavation & Sub-base
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  Proper ground preparation is essential for a durable driveway or patio. We excavate to the correct depth and install a stable sub-base.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Excavation to required depth</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Geotextile membrane installation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">MOT Type 1 sub-base compaction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Edge restraint installation</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
-                <Image
-                  src="/images/step-by-step/step-by-step-7.jpg"
-                  alt="Excavation"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 right-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>2</span>
-                </div>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-7.jpg"
+              imageAlt="Excavation"
+              stepNumber={2}
+              imagePosition="right"
+              title="Excavation & Sub-base"
+              description="Proper ground preparation is essential for a durable driveway or patio. We excavate to the correct depth and install a stable sub-base."
+              features={[
+                'Excavation to required depth',
+                'Geotextile membrane installation',
+                'MOT Type 1 sub-base compaction',
+                'Edge restraint installation'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/step-by-step/step-by-step-8.jpg"
-                  alt="Surface installation"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 left-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>3</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Surface Installation
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  We install your chosen surface material with precision, ensuring a flawless finish that will last for years.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Sharp sand bedding layer</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Block paving / tarmac / resin laying</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Cutting and fitting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Plate compaction</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-8.jpg"
+              imageAlt="Surface installation"
+              stepNumber={3}
+              imagePosition="left"
+              title="Surface Installation"
+              description="We install your chosen surface material with precision, ensuring a flawless finish that will last for years."
+              features={[
+                'Sharp sand bedding layer',
+                'Block paving / tarmac / resin laying',
+                'Cutting and fitting',
+                'Plate compaction'
+              ]}
+            />
 
-            <div className="step-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h3 className="text-3xl font-black text-slate-900 mb-4" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>
-                  Finishing & Sealing
-                </h3>
-                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                  The final stage protects your investment and ensures longevity. We apply sealants and perform final checks.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Kiln-dried sand jointing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Sealant application</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Final compaction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-600 mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-slate-700">Site cleanup and inspection</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="process-image-card relative h-80 rounded-3xl overflow-hidden shadow-2xl order-1 lg:order-2">
-                <Image
-                  src="/images/step-by-step/step-by-step-9.jpg"
-                  alt="Finishing"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-6 right-6 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-3xl font-black" style={{ fontFamily: 'RF Dewi Extended, sans-serif' }}>4</span>
-                </div>
-              </div>
-            </div>
+            <AnimatedStepCard
+              imageSrc="/images/step-by-step/step-by-step-9.jpg"
+              imageAlt="Finishing"
+              stepNumber={4}
+              imagePosition="right"
+              title="Finishing & Sealing"
+              description="The final stage protects your investment and ensures longevity. We apply sealants and perform final checks."
+              features={[
+                'Kiln-dried sand jointing',
+                'Sealant application',
+                'Final compaction',
+                'Site cleanup and inspection'
+              ]}
+            />
           </div>
         </div>
       </section>
