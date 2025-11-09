@@ -425,18 +425,32 @@ export default function DashboardPage() {
     console.log('Files to Delete:', deleteQueue.length);
     
     try {
-      const currentImageCount = images.length;
+      // Get current max number from existing images
+      const existingNumbers = images
+        .map(img => {
+          const match = img.name.match(/-(\d+)\./);
+          return match ? parseInt(match[1]) : 0;
+        })
+        .filter(num => num > 0);
       
-      // Upload new images
+      const currentMaxNumber = existingNumbers.length > 0 ? Math.max(...existingNumbers) : 0;
+      console.log('Current max image number:', currentMaxNumber);
+      console.log('Next image will be:', currentMaxNumber + 1);
+      
+      // Upload new images with proper sequential numbering
       for (let i = 0; i < uploadQueue.length; i++) {
         const file = uploadQueue[i];
-        const newNumber = currentImageCount + i + 1;
-        const fileExtension = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+        const newNumber = currentMaxNumber + i + 1;
+        
+        // Always use .jpg extension for consistency
         const newFileName = selectedCategory === 'logo' 
           ? 'logo.png' 
-          : `${selectedCategory}-${newNumber}.${fileExtension}`;
+          : `${selectedCategory}-${newNumber}.jpg`;
         
-        console.log('Uploading:', newFileName);
+        console.log(`Uploading file ${i + 1}/${uploadQueue.length}:`);
+        console.log('  Original name:', file.name);
+        console.log('  New name:', newFileName);
+        console.log('  Number:', newNumber);
         
         const base64 = await new Promise<string>((resolve, reject) => {
           const reader = new FileReader();
@@ -461,10 +475,10 @@ export default function DashboardPage() {
         
         if (!response.ok) {
           const error = await response.json();
-          throw new Error(`Upload failed: ${JSON.stringify(error)}`);
+          throw new Error(`Upload failed for ${newFileName}: ${JSON.stringify(error)}`);
         }
         
-        console.log('✅ Uploaded:', newFileName);
+        console.log('✅ Successfully uploaded:', newFileName);
       }
       
       // Delete images
